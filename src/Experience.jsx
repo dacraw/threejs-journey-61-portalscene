@@ -1,4 +1,10 @@
-import { OrbitControls, useGLTF, useTexture, Center } from "@react-three/drei";
+import {
+  OrbitControls,
+  useGLTF,
+  useTexture,
+  Center,
+  Sparkles,
+} from "@react-three/drei";
 import * as THREE from "three";
 
 const poleLightMaterial = new THREE.MeshBasicMaterial();
@@ -35,7 +41,15 @@ export default function Experience() {
           geometry={nodes.portalLight.geometry}
           position={nodes.portalLight.position}
           rotation={nodes.portalLight.rotation}
-        ></mesh>
+        />
+
+        <Sparkles
+          size={6}
+          scale={[4, 2, 4]}
+          position-y={1}
+          speed={0.2}
+          count={40}
+        />
       </Center>
     </>
   );
